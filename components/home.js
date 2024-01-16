@@ -1,28 +1,22 @@
 import React from 'react';
-import { View, Button, StyleSheet } from "react-native";
-import { Text } from 'react-native';
+import { View, Button, Text } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
-const HomeScreen = ({ navigation }) => {
-    console.log(navigation);
+import styles from "../globalCss/css.js";   
 
+
+const HomeScreen = () => {
+    const navigate = useNavigation();
     return (
         <View style={styles.container}>
             <Text>HomeScreen</Text>
             <Button
                 title="Go Form"
-                onPress={() => navigation.navigate('Form')}
+                onPress={() => navigate.navigate('Form')}
             />
         </View>
     );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center', 
-    },
-});
 
 export default HomeScreen;
